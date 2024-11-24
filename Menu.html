@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="Imagenes/Red and Yellow Catering Flat Illustrative Food Place Logo (1).png" type="image/x-icon">
+ 
+</head>
+<body>
+    <header>
+        <h2>Menú de Luna Mágica</h2>
+        <input type="text" id="search" placeholder="Buscar plato...">
+        <div id="category-filter">
+            <button onclick="filterMenu('')">Todos</button>
+            <button onclick="filterMenu('Entradas')">Entradas</button>
+            <button onclick="filterMenu('Platos principales')">Platos principales</button>
+            <button onclick="filterMenu('Postres')">Postres</button>
+            <button onclick="filterMenu('Bebidas')">Bebidas</button>
+        </div>
+    </header>
+    <section id="menu" class="container">
+        <!-- Aquí se cargarán dinámicamente los platos -->
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+const menuItems = [
+    { name: "Ensalada César con pollo a la parrilla", category: "Entradas", price: "$10", img: "Imagenes/MAGEEN.jpg" },
+    { name: "Sopa de tomate casera con crutones", category: "Entradas", price: "$12", img: "Imagenes/sopa.jpg" },
+    { name: "Empanadas de carne", category: "Entradas", price: "$11", img: "Imagenes/empanadas.jpg" },
+    { name: "Pollo", category: "Entradas", price: "$13", img: "Imagenes/MAGEN.jpg" },
+    { name: "Filete de res a la parrilla", category: "Platos principales", price: "$15", img: "Imagenes/carne.jpg" },
+    { name: "Salmón al horno con queso", category: "Platos principales", price: "$14", img: "Imagenes/salmon.jpg" },
+    { name: "Arroz con pollo", category: "Platos principales", price: "$5", img: "Imagenes/arroz.jpg" },
+    { name: "Risotto de hongos silvestres", category: "Platos principales", price: "$8", img: "Imagenes/rissoto.jpg" },
+    { name: "Tarta de manzana con helado", category: "Postres", price: "$9", img: "Imagenes/manzana.jpg" },
+    { name: "Crepes rellenos de Nutella y con fresas", category: "Postres", price: "$7", img: "Imagenes/crepes.jpg" },
+    { name: "Flan casero con caramelo y crema batida", category: "Postres", price: "$2", img: "Imagenes/flan.jpg" },
+    { name: "Mousse de chocolate negro con frutos rojos y menta fresca", category: "Postres", price: "$3", img: "Imagenes/mousse.jpg" },
+    { name: "Cervezas", category: "Bebidas", price: "$4", img: "Imagenes/cerveza.jpg" },
+    { name: "Vinos", category: "Bebidas", price: "$6", img: "Imagenes/vino.jpg" },
+    { name: "Cócteles", category: "Bebidas", price: "$8", img: "Imagenes/coctel.jpg" },
+    { name: "Refresco", category: "Bebidas", price: "$4", img: "Imagenes/refresco.jpg" }
+    // Agrega más platos aquí si es necesario
+];
+
+const menuSection = document.getElementById("menu");
+
+// Función para renderizar los platos en el menú
+function renderMenu(items) {
+    menuSection.innerHTML = "";
+    items.forEach(item => {
+        const menuItem = document.createElement("div");
+        menuItem.classList.add("menu-item");
+
+        menuItem.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>Precio: ${item.price}</p>
+            <button onclick="order('${item.name}')">Pedir delivery</button>
+            <button onclick="reserve()">Apartar mesa</button>
+        `;
+
+        menuSection.appendChild(menuItem);
+    });
+}
+
+// Función para filtrar los platos por categoría
+function filterMenu(category) {
+    const filteredItems = category ? menuItems.filter(item => item.category === category) : menuItems;
+    renderMenu(filteredItems);
+}
+
+// Función para buscar platos en tiempo real
+document.getElementById("search").addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase();
+    const filteredItems = menuItems.filter(item => item.name.toLowerCase().includes(searchTerm));
+    renderMenu(filteredItems);
+});
+
+renderMenu(menuItems); // Renderizar todos los platos al cargar la página
+
+function order(itemName) {
+    const phoneNumber = "+584268674852";
+    const message = `Hola, estoy visitando tu página web y estoy interesado en ordenar el siguiente plato: ${itemName}`;
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
+
+function reserve() {
+    const phoneNumber = "+584268674852";
+    const message = "Hola, estoy visitando tu página web y quiero reservar una mesa.";
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
+
+
+    </script>
+</body>
+</html>

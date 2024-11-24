@@ -1,0 +1,1351 @@
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #121212;
+  color: #fff;
+}
+ 
+header {
+  background-color: #e9be00; /* Fondo amarillo */
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+ 
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo solo para computadoras */
+.desktop-only h1 {
+  font-size: 2.5em; /* Ajusta el tamaño del encabezado principal según tu preferencia */
+}
+
+.desktop-only h2 {
+  font-size: 1.2em; /* Tamaño del subtítulo más pequeño */
+  color: rgb(0, 0, 0); /* Opcional: Cambia el color del texto si lo deseas */
+  margin-top: 0.5em; /* Espacio superior opcional */
+}
+
+/* Contenedor de partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegúrate de que las partículas estén detrás del contenido */
+}
+
+
+/* Barra de navegación */
+nav {
+  background-color: #333;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/* Nombre del restaurante */
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-name {
+  font-size: 1.5em; /* Tamaño reducido */
+  font-weight: bold;
+  color: #f39c12;
+  letter-spacing: 1px;
+  margin-right: 20px;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 10px; /* Ajuste para mejorar la separación */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500; /* Mantener un estilo elegante */
+  font-size: 0.85em; /* Tamaño más reducido */
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-toggle {
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  /* Menú hamburguesa en pantallas pequeñas */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px; /* El menú está oculto fuera de la pantalla */
+    background-color: #333;
+    height: 100vh;
+    width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transition: right 0.4s ease-in-out; /* Transición suave */
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0; /* Desliza el menú hacia la derecha */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Estilos para el botón de cerrar */
+.close-menu {
+  font-size: 2rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  /* Mostrar el botón de cierre solo en dispositivos móviles */
+  .close-menu {
+    display: block;
+  }
+
+  .nav-links.active {
+    right: 0; /* Desliza el menú hacia la derecha */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Ocultar la X en pantallas grandes (computadoras) */
+@media screen and (min-width: 769px) {
+  .close-menu {
+    display: none; /* Ocultar la X */
+  }
+}
+
+
+/* Contenido principal */
+#home {
+  height: 100vh; /* Mantén la altura completa en pantallas grandes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+/* Solo en celulares */
+@media (max-width: 768px) {
+  #home {
+    height: 80vh; /* Reducido a un 80% de la altura de la ventana en celulares */
+  }
+}
+
+
+.home-content {
+  max-width: 800px;
+}
+
+.graphic {
+  font-size: 3.5rem; /* Ajustado para que el gráfico sea más pequeño */
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em; /* Ajustado a un tamaño más moderado */
+  margin: 0;
+  color: #f39c12;
+}
+
+h3 {
+  font-size: 1.2em; /* Ajustado a un tamaño más pequeño */
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.tagline {
+  font-size: 0.9em; /* Ajustado a un tamaño más pequeño */
+  margin-top: 20px;
+  color: #bbb;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.cta-button {
+  padding: 10px 20px; /* Ajustado para no verse tan grande */
+  background-color: #f39c12;
+  color: white;
+  font-size: 1em; /* Ajustado para ser más moderado */
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e67e22;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid #f39c12;
+  color: #f39c12;
+}
+
+.cta-button.secondary:hover {
+  background-color: #f39c12;
+  color: white;
+}
+
+
+/* Ajustes para móviles (pantallas menores a 768px) */
+@media screen and (max-width: 768px) {
+  .restaurant-name {
+    font-size: 1.4em; /* Reducido tamaño del nombre */
+  }
+
+  .nav-links a {
+    font-size: 0.85em; /* Reducido tamaño de los enlaces */
+  }
+
+  h1 {
+    font-size: 1.4em; /* Reducido tamaño del título */
+  }
+
+  h2 {
+    font-size: 1.1em; /* Reducido tamaño del subtítulo */
+  }
+
+  .graphic {
+    font-size: 2.5rem; /* Reducido tamaño de los gráficos */
+  }
+
+  .tagline {
+    font-size: 0.8em; /* Reducido tamaño del tagline */
+  }
+
+  .cta-button {
+    font-size: 0.9em; /* Reducido tamaño de los botones */
+  }
+}
+
+
+
+
+
+/* Estilos específicos para la sección 'Acerca de Nosotros' */
+#about {
+  background: linear-gradient(to bottom, rgb(255, 255, 255), #ffffff); /* Degradado de arriba hacia abajo */
+  color: rgb(0, 0, 0); /* Color de texto más oscuro para mejor legibilidad */
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  padding: 60px 20px; /* Mayor padding para más espacio */
+  box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra sutil para un efecto de elevación */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para los cambios */
+}
+
+#about:hover {
+  box-shadow: 0 8px 16px rgb(0, 0, 0); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px; /* Ancho máximo para mantener la sección centrada */
+  margin: 0 auto; /* Centra la sección */
+}
+
+.about-text {
+  max-width: 100%;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  background-color: #e9be00; /* Fondo amarillo para el texto */
+  border-radius: 8px; /* Bordes redondeados en el contenedor del texto */
+  box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra sutil para el contenedor del texto */
+  transition: box-shadow 0.3s ease; /* Transición suave para los cambios en la sombra */
+}
+
+.about-text:hover {
+  box-shadow: 0 8px 16px rgb(0, 0, 0); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.about-text h2 {
+  text-align: center;
+  color: rgb(255, 255, 255); /* Color del encabezado para hacerlo destacar un poco más */
+  margin-bottom: 20px; /* Espacio debajo del encabezado */
+  font-size: 1.5em; /* Tamaño de fuente aumentado */
+}
+
+.about-text p {
+  margin-bottom: 20px; /* Espacio entre párrafos */
+  text-align: justify; /* Justificación del texto */
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 8px; /* Bordes redondeados en las imágenes */
+  transition: transform 0.3s ease; /* Transición suave para los efectos de hover */
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilo para ocultar la primera imagen en dispositivos que no sean móviles */
+@media screen and (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Media query para dispositivos móviles y tabletas */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 30px 15px; /* Ajusta el padding para pantallas más pequeñas */
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin: 20px 0;
+  }
+
+  .about-image {
+    margin: 20px 0;
+  }
+}
+
+.about-image:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilo para ocultar la primera imagen en dispositivos que no sean móviles */
+@media screen and (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Media query para dispositivos móviles y tabletas */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 30px 15px; /* Ajusta el padding para pantallas más pequeñas */
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin: 20px 0;
+  }
+
+  .about-image {
+    margin: 20px 0;
+  }
+}
+
+ /* Estilo general para la sección de bienvenida */
+.welcome-section {
+  position: relative;
+  padding: 0;
+  background: url('Imagenes/food-761041_1280.jpg') center/cover no-repeat;
+  text-align: center;
+  height: 100vh; /* Altura completa de la ventana en pantallas grandes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Capa negra semi-transparente */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor del contenido */
+.welcome-section .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo del encabezado */
+.welcome-section h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Estilo del botón */
+.welcome-section .menu-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #fff;
+  color: #ff7e5f;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo del botón al pasar el cursor */
+.welcome-section .menu-button:hover {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+  .welcome-section {
+    height: 100vw; /* Altura igual al ancho de la ventana */
+  }
+}
+
+
+.menu-item {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 1 / 1; /* Mantiene el tamaño cuadrado */
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+ 
+/* Estilo para el título */
+h2 {
+  color: #000; /* Color negro */
+  font-size: 2rem; /* Ajusta el tamaño del texto si es necesario */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 20px; /* Ajusta el margen inferior si es necesario */
+}
+
+
+.menu-item h3 {
+  margin: 10px 0;
+  font-size: 12px; /* Reducido para hacer el texto más pequeño */
+  color: #000;
+}
+
+.menu-item p {
+  margin: 5px 0 10px;
+  font-size: 10px; /* Reducido para hacer el texto del precio más pequeño */
+  color: #04dd16;
+  font-weight: bold; /* Pone el texto en negrita */
+}
+
+.menu-item button {
+  display: block;
+  width: calc(100% - 20px); /* Asegura que el botón ocupe casi todo el ancho del contenedor */
+  padding: 6px; /* Menos padding para botones más pequeños */
+  margin-top: 8px; /* Ajusta el margen superior */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 10px; /* Tamaño de fuente más pequeño para los botones */
+}
+
+.menu-item button:nth-of-type(1) {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.menu-item button:nth-of-type(2) {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.menu-item button:hover {
+  background-color: #0056b3;
+}
+
+#category-filter {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#category-filter {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas si es necesario */
+  justify-content: center; /* Centra los botones en el contenedor */
+}
+
+#category-filter button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px; /* Ajusta el padding para botones más pequeños */
+  margin: 5px; /* Espacio entre los botones */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 12px; /* Ajusta el tamaño de fuente para los botones */
+}
+
+#category-filter button:hover {
+  background-color: #0056b3;
+}
+
+#search {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@media screen and (min-width: 769px) {
+  .menu-item {
+      width: calc(33.33% - 20px); /* Para pantallas más grandes, tres columnas */
+  }
+
+  .menu-item button {
+      padding: 10px; /* Aumenta el padding para botones en computadoras */
+      font-size: 12px; /* Aumenta el tamaño de la fuente para botones en computadoras */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-item {
+      width: calc(50% - 20px); /* Para pantallas más pequeñas, dos columnas */
+  }
+}
+
+
+
+/* Reset básico para márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Sección de galería */
+#galeria {
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+
+/* Estilos generales para la sección */
+#galeria {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#galeria h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Contenedor de la galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Elementos de la galería */
+.gallery-item {
+  flex: 1 1 calc(33.333% - 1.5rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  border-radius: 15px;
+}
+
+/* Efecto hover en los items */
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Reset básico para márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+/* Sección de testimonios */
+#testimonios {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Título de la sección */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Contenedor de testimonios */
+.testimonial-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Tarjetas de testimonios */
+.testimonial-card {
+  flex: 1 1 calc(33.333% - 2rem);
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card span {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Efecto hover en las tarjetas */
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Reset básico para márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#faq {
+  background: linear-gradient(to bottom, rgb(255, 255, 255), #e9be00); /* Degradado de arriba hacia abajo */
+  text-align: center;
+  padding: 40px 20px; /* Aumenta el espacio interno para separar del contenido */
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.faq-item {
+  margin-bottom: 20px; /* Aumenta el espacio entre elementos */
+  background-color: #ffffff;
+  padding: 20px; /* Aumenta el espacio interno */
+  border-radius: 10px; /* Reducido el radio del borde para suavizar las esquinas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+  width: 80%; /* Establece un ancho máximo para la pregunta/respuesta */
+  max-width: 600px; /* Ajusta el ancho máximo para pantallas grandes */
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#faq h2 {
+  font-size: 1.5rem;  /* Aumenta el tamaño del título de la sección */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.question h3 {
+  margin: 0;
+  font-size: 18px; /* Aumenta el tamaño de la fuente del título */
+  color: #000000; /* Cambiado el color del texto de las preguntas */
+  font-weight: bold; /* Hacer el texto más grueso */
+  flex: 1; /* Permite que la pregunta ocupe todo el espacio disponible */
+}
+
+.toggle-btn {
+  background-color: #ffffff;
+  color: #005ce6;
+  text-align: center;
+  line-height: 16px;
+  font-weight: bold;
+  width: 20px; /* Aumentado el tamaño del botón */
+  height: 20px; /* Aumentado el tamaño del botón */
+  border-radius: 50%;
+  flex-shrink: 0; /* Evita que el botón se reduzca en tamaño */
+}
+
+.answer {
+  display: none;
+  font-size: 16px;
+  color: #000000;
+  text-align: justify; /* Justifica el texto */
+  word-spacing: 3px; /* Agrega espacio entre palabras */
+  margin-top: 10px; /* Agrega espacio entre la respuesta y el título */
+}
+
+.answer p:last-child {
+  text-align-last: left; /* Alinea la última línea del párrafo a la izquierda */
+}
+
+/* Estilos cuando la pregunta o respuesta está cerrada */
+.question .toggle-btn::after {
+  content: "\25BC"; /* Flecha hacia abajo */
+}
+
+.answer .toggle-btn::after {
+  content: ""; /* Sin contenido para la flecha cuando está cerrada */
+}
+
+/* Estilos cuando la pregunta o respuesta está abierta */
+.question.open .toggle-btn::after {
+  content: "\25B2"; /* Flecha hacia arriba */
+}
+
+.answer.open .toggle-btn::after {
+  content: ""; /* Sin contenido para la flecha cuando está abierta */
+}
+
+/* Estilos para mostrar respuestas cuando la pregunta está abierta */
+.question.open + .answer,
+.answer.open {
+  display: block;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .faq-item {
+    width: 90%; /* Ajusta el ancho máximo para pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    width: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+    height: 24px; /* Aumenta el tamaño del botón para pantallas pequeñas */
+  }
+}
+
+/* Estilos para la sección de mapa */
+#map {
+  background-color: #f9f9f9; /* Fondo suave para la sección */
+  padding: 40px 20px; /* Espaciado interno */
+  text-align: center; /* Centrado del título */
+}
+
+/* Estilos del título */
+.map-title {
+  font-size: 1.5rem; /* Tamaño grande para el título */
+  font-weight: bold; /* Hacer el texto más grueso */
+  color: #333; /* Color oscuro para el título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  text-transform: uppercase; /* Mayúsculas para dar un toque más formal */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-align: center; /* Alineación central */
+}
+
+/* Estilos para el mapa */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  margin-bottom: 2rem; /* Espacio debajo del mapa */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Estilo adicional para mejorar la visualización en pantallas grandes */
+@media (min-width: 768px) {
+  .map-container {
+    height: 500px; /* Altura fija en pantallas grandes */
+    padding-bottom: 0; /* Eliminar el relleno inferior */
+  }
+}
+
+
+/* Estilos para el botón de contacto */
+.contact-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px; /* Bordes más redondeados */
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none; /* Sin borde visible */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.contact-button:hover {
+  background-color: #000;
+  color: #ffffff;
+  transform: translateY(-5px); /* Aumentar el efecto de elevación */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al pasar el ratón */
+}
+
+.contact-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Sombra sutil para el enfoque */
+}
+
+/* Estilos para el botón de contacto */
+.contact-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000;
+  padding: 8px 18px; /* Tamaño reducido */
+  text-decoration: none;
+  border-radius: 20px; /* Bordes más suaves */
+  margin-top: 15px;
+  font-size: 0.9rem; /* Fuente más pequeña */
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.contact-button:hover {
+  background-color: #000;
+  color: #ffffff;
+  transform: translateY(-3px); /* Efecto de elevación más sutil */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.contact-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Sombra sutil para el enfoque */
+}
+
+/* Sección de contacto */
+#contacto {
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  border-bottom: 4px solid #0069f4;
+  padding: 30px 20px; /* Espaciado reducido */
+}
+
+#contacto h2 {
+  font-size: 2rem; /* Tamaño de título más pequeño */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0069f4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Redes sociales */
+.redes-sociales {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.red-social {
+  display: inline-block;
+  background-color: #3b5998; 
+  color: #fff;
+  padding: 8px 16px; /* Tamaño reducido */
+  border-radius: 40px; /* Bordes más redondeados */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+  font-size: 1rem; /* Fuente más pequeña */
+}
+
+.red-social.instagram {
+  background-color: #c13584;
+}
+
+.red-social:hover {
+  background-color: #2d4373;
+  transform: translateY(-3px); /* Efecto de flotación sutil */
+}
+
+.red-social.instagram:hover {
+  background-color: #9b4d96;
+}
+
+/* Estilo para el botón de WhatsApp */
+.whatsapp-button {
+  text-align: center;
+  margin-bottom: 40px; /* Menos espacio debajo */
+}
+
+.whatsapp-link {
+  background-color: #25d366;
+  color: #fff;
+  padding: 8px 18px; /* Tamaño reducido */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer;
+  border: none;
+  font-size: 1rem; /* Fuente más pequeña */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-link:hover {
+  background-color: #128c7e;
+  transform: translateY(-3px); /* Efecto de flotación */
+}
+
+/* Estilo para el botón de WhatsApp fijo */
+.whatsapp-button-fixed {
+  position: fixed;
+  bottom: 15px; /* Reducción del espacio desde el borde */
+  right: 15px; /* Reducción del espacio desde el borde */
+  width: 50px; /* Botón más pequeño */
+  height: 50px; /* Botón más pequeño */
+  z-index: 1000;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button-fixed img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.whatsapp-button-fixed img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query para ajustar el tamaño del botón en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .whatsapp-button-fixed {
+    width: 45px; /* Botón aún más pequeño en móviles */
+    height: 45px; /* Botón aún más pequeño en móviles */
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .contact-button {
+    font-size: 0.85rem; /* Fuente más pequeña */
+    padding: 8px 16px; /* Tamaño reducido */
+  }
+
+  .whatsapp-link {
+    font-size: 0.9rem; /* Fuente más pequeña */
+    padding: 8px 16px; /* Tamaño reducido */
+  }
+}
+
+ 
+
+/* Estilo para el botón flotante */
+.chat-btn {
+  position: fixed;
+  bottom: 80px; /* Ajustar la distancia según sea necesario */
+  right: 20px;
+  width: 50px; /* Botón más pequeño similar al de WhatsApp */
+  height: 50px; /* Botón más pequeño */
+  background-color: #007acc;
+  border-radius: 50%; /* Forma circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que la imagen se salga del contenedor */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para la imagen del ícono */
+.chat-btn img {
+  width: 100%; /* Asegura que ocupe todo el ancho del botón */
+  height: 100%; /* Asegura que ocupe todo el alto del botón */
+  object-fit: cover; /* Ajusta la imagen para que se recorte adecuadamente dentro del contenedor */
+  border-radius: 50%; /* Mantiene la forma circular */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.chat-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-btn:hover img {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .chat-btn {
+    bottom: 70px; /* Ajuste para que esté encima del botón de WhatsApp */
+    right: 10px;  /* Ajuste para más espacio en dispositivos pequeños */
+    width: 45px;  /* Tamaño reducido */
+    height: 45px;  /* Tamaño reducido */
+  }
+
+  .chat-btn img {
+    width: 100%; /* Ajusta la imagen dentro del nuevo tamaño */
+    height: 100%;
+  }
+}
+
+
+/* Botón de cerrar (X) */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #007acc;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover para el botón de cerrar */
+.close-btn:hover {
+  background-color: #00adb5;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto active para el botón de cerrar */
+.close-btn:active {
+  transform: scale(1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del chatbot */
+.chat-container {
+  position: fixed;
+  bottom: 80px; /* Ajustar para que se muestre justo encima del botón de WhatsApp */
+  right: 20px;
+  width: 400px;
+  max-width: 90%;
+  height: 70vh;
+  border-radius: 15px;
+  background-color: #222831;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  display: none;
+}
+
+/* Caja del chat */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #1b1b2f;
+  border-bottom: 2px solid #007acc;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Estilo de los mensajes */
+.chat-box .message {
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 80%;
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #00adb5;
+  color: #fff;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #393e46;
+  color: #f4f4f9;
+}
+
+/* Estilos de los botones de opción */
+.option-button {
+  display: block;
+  margin: 6px 0;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  color: #007acc;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #007acc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+}
+
+/* Efecto hover */
+.option-button:hover {
+  background-color: #007acc;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Efecto active */
+.option-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto focus */
+.option-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.5);
+}
+
+/* Estilos para la caja de entrada */
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  position: relative;
+  width: 100%;
+}
+
+/* Estilos para el campo de texto */
+#user-input {
+  width: 60%;
+  padding: 6px 10px;
+  border: 2px solid #007acc;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#user-input:focus {
+  border-color: #00adb5;
+}
+
+/* Estilos para el botón de enviar */
+.input-box button {
+  background-color: #007acc;
+  color: white;
+  font-size: 18px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto hover para el botón de enviar */
+.input-box button:hover {
+  background-color: #00adb5;
+  transform: scale(1.05);
+}
+
+/* Efecto de clic en el botón de enviar */
+.input-box button:active {
+  transform: scale(1);
+}
+
+ 
+ 
+
+  /* Estilos generales para el pie de pÃ¡gina */
+  footer {
+    background-color: #000; /* Color del encabezado (rosa oscuro) */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
